@@ -6,25 +6,25 @@ pygame.init()
 
 # fenetre principale + nom de la fenetre
 screen = pygame.display.set_mode((700,500))
-pygame.display.set_caption("gamelunch")
+pygame.display.set_caption("image/gamelunch")
 
 #image fond d'écran
-background = pygame.image.load('fond_jeu.png')
+background = pygame.image.load('image/fond_jeu.png')
 game = Game()
 
 #baniere pour la page de start
-baniere = pygame.image.load('baniere.png')
+baniere = pygame.image.load('image/baniere.png')
 baniere_rect = baniere.get_rect()
 
 # boutton play
-play_button = pygame.image.load('bouton_play.png')
+play_button = pygame.image.load('image/bouton_play.png')
 play_button = pygame.transform.scale(play_button,(300,200))
 play_button_rect = play_button.get_rect()
 play_button_rect.x = 190
 play_button_rect.y = 250
 
 #plateforme
-plateforme = pygame.image.load('plateforme.png')
+plateforme = pygame.image.load('image/plateforme.png')
 
 game_on = True
 

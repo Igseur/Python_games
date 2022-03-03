@@ -13,7 +13,7 @@ class Player(pygame.sprite.Sprite):
         self.jump = 3
         self.game = game
         self.all_bdf = pygame.sprite.Group()
-        self.image = pygame.image.load('player1.png')
+        self.image = pygame.image.load('image/player1.png')
         self.rect = self.image.get_rect()
         self.rect.x = 350
         self.rect.y = 360

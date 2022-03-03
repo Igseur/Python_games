@@ -10,7 +10,7 @@ class monster(pygame.sprite.Sprite):
         self.max_health = 100
         self.velocity = 1
         self.attack = 0.1
-        self.image = pygame.image.load('monstre.png')
+        self.image = pygame.image.load('image/monstre.png')
         self.rect = self.image.get_rect()
         self.rect.x = 10 + random.randint(-300,0)
         self.rect.y = 360
