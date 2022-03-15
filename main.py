@@ -5,26 +5,24 @@ from game import Game
 pygame.init()
 
 # fenetre principale + nom de la fenetre
-screen = pygame.display.set_mode((700,500))
-pygame.display.set_caption("image/gamelunch")
+screen = pygame.display.set_mode((1000,800))
+pygame.display.set_caption("new_game")
 
 #image fond d'écran
-background = pygame.image.load('image/fond_jeu.png')
+background = pygame.image.load('fond.png')
 game = Game()
 
 #baniere pour la page de start
-baniere = pygame.image.load('image/baniere.png')
+baniere = pygame.image.load('baniere.png')
 baniere_rect = baniere.get_rect()
 
 # boutton play
-play_button = pygame.image.load('image/bouton_play.png')
+play_button = pygame.image.load('bouton_play.png')
 play_button = pygame.transform.scale(play_button,(300,200))
 play_button_rect = play_button.get_rect()
-play_button_rect.x = 190
-play_button_rect.y = 250
+play_button_rect.x = 350
+play_button_rect.y = 350
 
-#plateforme
-plateforme = pygame.image.load('image/plateforme.png')
 
 game_on = True
 
@@ -37,10 +35,9 @@ while game_on:
     # ( si oui commencer lancer le jeu )
     if game.is_playing:
         game.update(screen)
-        screen.blit(plateforme,(200,150))
     # (sinon affiche la baniere et le bouton play
     else:
-        screen.blit(baniere,(200,100))
+        screen.blit(baniere,(355,200))
         screen.blit(play_button, play_button_rect)
 
     pygame.display.flip()
@@ -57,6 +54,9 @@ while game_on:
 
             if event.key == pygame.K_a:
                 game.player.launch_bdf()
+
+            elif event.key == pygame.K_z:
+                game.player.launch_bdf_2()
 
         elif event.type == pygame.KEYUP:
             game.pressed[event.key] = False
